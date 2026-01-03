@@ -25,4 +25,4 @@ Instead of relying on fragile, one-off scripts, this platform treats economic da
 
 The system follows a modern **Microservices** architecture. Each component is containerized and decoupled.
 
-[View on Eraser![](https://app.eraser.io/workspace/FxWGrvofJtLApVoJe31g/preview?elements=23SsGLBWPIkn0_YwUmPkmQ&type=embed)](https://app.eraser.io/workspace/FxWGrvofJtLApVoJe31g?elements=23SsGLBWPIkn0_YwUmPkmQ)
+![Oikonomia Architecture](./assets/diagram.png)
