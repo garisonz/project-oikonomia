@@ -25,41 +25,4 @@ Instead of relying on fragile, one-off scripts, this platform treats economic da
 
 The system follows a modern **Microservices** architecture. Each component is containerized and decoupled.
 
-```mermaid
-graph TD
-    %% Define Nodes
-    subgraph External ["☁️ External Data"]
-        FredAPI[("FRED API")]
-    end
-
-    subgraph Docker ["🐳 Oikonomia Container Host"]
-        
-        subgraph Orchestrator ["🧠 Orchestration"]
-            Scheduler["Airflow Scheduler<br/>(Daily Cron)"]
-        end
-
-        subgraph ELT ["⚙️ Processing"]
-            Ingest["Python Ingest<br/>(Extract & Load)"]
-            dbt["dbt Core<br/>(Transform & Test)"]
-        end
-
-        subgraph Warehouse ["💾 Storage (PostgreSQL)"]
-            Raw[("Schema: raw<br/>(JSONB Staging)")]
-            Clean[("Schema: serving<br/>(Star Schema)")]
-        end
-
-        subgraph App ["📊 Presentation"]
-            Streamlit["Streamlit Dashboard"]
-        end
-    end
-
-    %% Data Flow
-    FredAPI -->|JSON| Ingest
-    Scheduler -->|Trigger| Ingest
-    Ingest -->|Write| Raw
-    
-    Scheduler -->|Trigger| dbt
-    dbt -->|Read| Raw
-    dbt -->|Materialize| Clean
-    
-    Streamlit -->|SQL Query| Clean
+[View on Eraser![](https://app.eraser.io/workspace/FxWGrvofJtLApVoJe31g/preview?elements=23SsGLBWPIkn0_YwUmPkmQ&type=embed)](https://app.eraser.io/workspace/FxWGrvofJtLApVoJe31g?elements=23SsGLBWPIkn0_YwUmPkmQ)
