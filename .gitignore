@@ -1,0 +1,30 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Airflow (mounted later)
+src/airflow/logs/
+src/airflow/plugins/
+
+# dbt
+src/dbt/target/
+src/dbt/dbt_packages/
+src/dbt/logs/
